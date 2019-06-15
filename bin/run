@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
+
 require_relative "../lib/environment.rb"
 
-app = CLI.new
-app.run
+
+HPQuiz::CLI.new.call

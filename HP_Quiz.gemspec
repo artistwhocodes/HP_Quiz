@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{testing.}
   spec.description   = %q{testing.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/artistwhocodes/HP_Quiz"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -35,4 +35,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "tty-prompt"
+  spec.add_development_dependency "figlet"
+  spec.add_development_dependency "lolcat"
+  spec.add_development_dependency "tty-box"
+  spec.add_development_dependency "rainbow"
+
+
 end
