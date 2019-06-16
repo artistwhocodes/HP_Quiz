@@ -15,14 +15,14 @@ class HPQuiz::CLI
    def call #instance method
      #system "afplay  ./lib/HPSong.mp3 &"
      system "clear"
-     self.banner
+     # self.banner
      system "clear"
      self.greeting # self is an instance of CLI
       self.letter_of_acceptance
-     system "clear"
-     self.questions
-     system "clear"
-     self.largest
+     # system "clear"
+     # self.questions
+     # system "clear"
+     # self.winner
      #self.stats
    end
 
@@ -41,21 +41,35 @@ class HPQuiz::CLI
      puts "\n\n\n\n\n"
      system "clear"
      puts "\n\n\n\n\n"
-     puts "What's your name #{species}?"
-     @name = gets.chomp
+     # puts "What's your name #{species}?"
+     # @name = gets.chomp
+     @name = prompt.ask("What is your name #{species}?") do |q|
+       q.required true
+       q.validate /\A\w+\Z/
+       q.modify   :capitalize
+     end
      system "clear"
      puts "\n\n\n\n\n"
-     puts "Hello, #{@name}! I have a letter you been waiting for ..."
-      puts "\n\n\n\n\n"
-     puts "Type the Summoning Charm Accio"
-     idlk = gets.chomp
+     puts "Hello, #{@name}! I have a letter you been waiting for."
+     puts "\n\n\n\n\n"
+     prompt.ask('Type the Summoning Charm Accio to summon it.') do |q|
+       q.validate(/\b((?i)accio(?-i))\b/)
+       q.messages[:valid?] = 'Wrong spell!'
+     end
      puts "\n\n\n\n\n"
      puts "\n\n\n\n\n"
 
    end
 
    def letter_of_acceptance
-     box = TTY::Box.frame(width: 110, height: 15, align: :center, padding: 2,
+     box = TTY::Box.frame(width: TTY::Screen.width, height: TTY::Screen.height,  border: :thick, align: :center, padding: 4,style: {
+      fg: :black,
+      bg: :white,
+      border: {
+        fg: :dark,
+        bg: :white
+        }
+      },
        title: {top_left: 'Letter of Acceptance', bottom_right: 'Yukihiro - Ruby Professor '}) do
        " Dear #{@name} \n
        We are pleased to inform you that you have been accepted at \n
@@ -67,13 +81,15 @@ class HPQuiz::CLI
      end
      print box
 
-     prompt = TTY::Prompt.new
-     option = prompt.yes?('Are you ready to be sorted into your house?' )
-                if option == true
-                  puts "awesome!"
-                else
-                 puts "You're going to take it anyway."
-                end
+     puts "Continue?"
+     input = gets.chomp.upcase
+
+     if input == "yes".upcase
+       puts "OKAY"
+     else
+       system "clear"
+     self.letter_of_acceptance
+     end
    end
 
 
@@ -160,12 +176,18 @@ class HPQuiz::CLI
   end
 
 
-  def largest
+  def winner
    answer =  freq_count.max_by{| k, v|  v  }
    answer.tap{ |k,v|
      if k == "g"
         k = "Gryffindor"
-        puts Rainbow("You are in the house:").darkred
+        banner = HPQuiz::Scraper.new.get_page("collection/all-about-gryffindor").search(".subject-description").text.strip
+        box = TTY::Box.frame(width: 110, height: 15, border: :thick, align: :center, padding: 2,
+          title: {top_center: 'Letter of Acceptance', bottom_right: 'Yukihiro - Ruby Professor '}) do
+            Rainbow("#{banner}").darkred
+        end
+        print box
+        puts "You are in the house:"
      elsif k == "r"
         k = "Ravenclaw"
         puts Rainbow("You are in the house:").blue
