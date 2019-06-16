@@ -7,3 +7,4 @@ end
 
 require_relative "./HP_Quiz"
 require_relative "./cli"
+require_relative "./scraper"
