@@ -13,7 +13,7 @@ class HPQuiz::CLI
      # system "clear"
      # self.banner
      # system "clear"
-     #self.greeting # self is an instance of CLI
+     self.greeting # self is an instance of CLI
      # self.letter_of_acceptance
      # system "clear"
      self.questions
@@ -44,7 +44,8 @@ class HPQuiz::CLI
     puts "\n\n\n\n\n"
     puts "Hello, #{@name}! I have a letter you been waiting for."
     puts "\n\n\n\n\n"
-    prompt.ask('Type the ✨Summoning Charm✨' + Rainbow(' Accio ').yellow.bright + 'to summon it.') do |q| # turn this into a varaible
+    magic = prompt.decorate('✨')
+    prompt.mask('Type the ✨Summoning Charm✨' + Rainbow(' Accio ').yellow.bright + 'to summon it.', mask: magic) do |q| # turn this into a varaible
       q.validate(/\b((?i)accio(?-i))\b/)
       q.messages[:valid?] = 'Wrong spell!'
     end
