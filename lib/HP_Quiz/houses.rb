@@ -19,10 +19,10 @@ class HPQuiz::Houses
      HPQuiz::Ravenclaw.new.ravenclaw_banner
      HPQuiz::Ravenclaw.new.check_house_question
      HPQuiz::Ravenclaw.new.house_menu
-   elsif k == "huflepuff"
-     HPQuiz::Huflepuff.new.huflepuff_banner
-     HPQuiz::Huflepuff.new.check_house_question
-     HPQuiz::Huflepuff.new.house_menu
+   elsif k == "hufflepuff"
+     HPQuiz::Hufflepuff.new.hufflepuff_banner
+     HPQuiz::Hufflepuff.new.check_house_question
+     HPQuiz::Hufflepuff.new.house_menu
    else
     HPQuiz::Slytherin.new.slytherin_banner
     HPQuiz::Slytherin.new.check_house_question
