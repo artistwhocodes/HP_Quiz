@@ -22,7 +22,7 @@ class HPQuiz::Hufflepuff
   def house_menu
     prompt = TTY::Prompt.new(active_color: :yellow)
     system "clear"
-    prompt.select(Rainbow("🐿Welcome to Hufflepuff!🐿\nHere's your house information:").yellow.bold, help: "", cycle: true) do |menu|
+    prompt.select(Rainbow("🐿 Welcome to Hufflepuff!🐿\nHere's your house information:").yellow.bold, help: "", cycle: true) do |menu|
       menu.choice "Common Room", -> {house_infor}
       menu.choice "House Founder",  -> {founder_infor}
       menu.choice "Your Sorting Quiz Stats", -> {stats}
@@ -31,38 +31,38 @@ class HPQuiz::Hufflepuff
   end
 
   def house_infor
-    header = HPQuiz::Scraper.new.header("hufflepuff")
-    ht = HPQuiz::Scraper.new.header_title("hufflepuff")
-    hd = HPQuiz::Scraper.new.header_description("hufflepuff")
+    house_header = HPQuiz::Scraper.new.house_header("hufflepuff")
+    house_ht = HPQuiz::Scraper.new.house_header_title("hufflepuff")
+    house_hd = HPQuiz::Scraper.new.house_header_description("hufflepuff")
     puts "\n"
-    puts Rainbow("❝#{header}❞").yellow.bright
+    puts Rainbow("❝#{house_header}❞").yellow.bright
 
-    # puts <<~DOC
-    #  Rainbow(#{ht[0]}).red.bright.underline \n #{hd[0]} \n
-    #  #{ht[1]} \n #{hd[1]} \n
-    #  #{ht[2]} \n #{hd[2]} \n
-    #  #{ht[3]} \n #{hd[3]} \n
-    # DOC
-    puts "\n"
-    puts Rainbow("✨#{ht[0]}:✨").green.bright.underline
-    puts Rainbow("#{hd[0]}")
-    puts "\n"
-    puts Rainbow("✨#{ht[1]}:✨").green.bright.underline
-    puts Rainbow("#{hd[1]}")
-    puts "\n"
-    puts Rainbow("✨#{ht[2]}:✨").green.bright.underline
-    puts Rainbow("#{hd[2]}")
-    puts "\n"
-    puts Rainbow("✨#{ht[3]}:✨").green.bright.underline
-    puts Rainbow("#{hd[3]}")
+    house_infor_section = house_ht.zip(house_hd).to_h
+
+    house_infor_section.each do  |k , v|
+      puts "\n"
+      puts Rainbow("✨#{k}:✨").yellow.bright.underline
+      puts Rainbow("#{v}")
+    end
 
     exit
-
-    system "clear"
   end
 
   def founder_infor
-    puts "founder stuff"
+    founder_header = HPQuiz::Scraper.new.founder_header("helga-hufflepuff")
+    founder_ht = HPQuiz::Scraper.new.founder_header_title("helga-hufflepuff")
+    founder_hd = HPQuiz::Scraper.new.founder_header_description("helga-hufflepuff")
+    puts "\n"
+    puts Rainbow("❝#{founder_header}❞").yellow.bright
+
+    founder_infor_section = founder_ht.zip(founder_hd).to_h
+
+    founder_infor_section.each do  |k , v|
+      puts "\n"
+      puts Rainbow("✨#{k}:✨").yellow.bright.underline
+      puts Rainbow("#{v}")
+    end
+
     exit
   end
 
