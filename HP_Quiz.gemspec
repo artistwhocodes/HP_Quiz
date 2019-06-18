@@ -6,11 +6,11 @@ require "HP_Quiz/version"
 Gem::Specification.new do |spec|
   spec.name          = "HP_Quiz"
   spec.version       = HPQuiz::VERSION
-  spec.authors       = ["artistwhocodes"]
+  spec.authors       = ["<github username>"]
   spec.email         = ["<github email address>"]
 
-  spec.summary       = %q{testing.}
-  spec.description   = %q{testing.}
+  spec.summary       = %q{It's a Harry Potter Sorting Quiz but in your terminal!}
+  # spec.description   = %q{testing.}
   spec.homepage      = "https://github.com/artistwhocodes/HP_Quiz"
   spec.license       = "MIT"
 
@@ -18,6 +18,8 @@ Gem::Specification.new do |spec|
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
     spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["homepage_uri"] = spec.homepage
+    spec.metadata["source_code_uri"] = "https://github.com/artistwhocodes/HP_Quiz"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
