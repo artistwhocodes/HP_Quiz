@@ -13,7 +13,7 @@ class HPQuiz::CLI
      # system "clear"
      # self.banner
      # system "clear"
-     self.greeting # self is an instance of CLI
+     #self.greeting # self is an instance of CLI
      # self.letter_of_acceptance
      # system "clear"
      self.questions
@@ -22,7 +22,7 @@ class HPQuiz::CLI
   end
 
   def banner
-    puts Rainbow("Gryffindor ").darkred + Rainbow("Ravenclaw ").blue + Rainbow("Hufflepuff ").yellow + Rainbow("Slytherin").green
+    puts Rainbow("Gryffindor ").darkred + Rainbow("Ravenclaw ").steelblue + Rainbow("Hufflepuff ").yellow + Rainbow("Slytherin").green
     system "figlet The Sorting Terminal | lolcat -a -d 1"
     system "echo Hogwarts School of Witchcraft and Wizardry | lolcat -a -d 100"
   end
@@ -92,10 +92,10 @@ class HPQuiz::CLI
     puts "\n"
     choices2 = {"Forest" => ["gryffindor" , "ravenclaw"] , "River" => ["slytherin" , "huflepuff"] }
     @@sum << input2 = prompt.select("2. Forest🌲 or river💦?", choices2 , help: "" , cycle: true)
-    puts "\n"
+    # puts "\n"
     # choices3 = {"Moon" => ["ravenclaw" , "slytherin"], "Stars" => ["gryffindor" , "huflepuff"]}
     # @@sum << input3 = prompt.select("3. Moon or stars?", choices3 , help: "")
-    # puts "\n"
+    # # puts "\n"
     # choices4 = {"Ordinary" => ["slytherin"], "Ignorant" => ["ravenclaw"] , "Cowardly" => ["gryffindor"] , "Selfish" => ["huflepuff"]}
     # @@sum << input4 = prompt.select("4. Which of the following would you most hate people to call you?", choices4)
     # puts "\n"
