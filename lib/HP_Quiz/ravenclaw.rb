@@ -31,38 +31,38 @@ class HPQuiz::Ravenclaw
   end
 
   def house_infor
-    header = HPQuiz::Scraper.new.header("ravenclaw")
-    ht = HPQuiz::Scraper.new.header_title("ravenclaw")
-    hd = HPQuiz::Scraper.new.header_description("ravenclaw")
+    house_header = HPQuiz::Scraper.new.house_header("ravenclaw")
+    house_ht = HPQuiz::Scraper.new.house_header_title("ravenclaw")
+    house_hd = HPQuiz::Scraper.new.house_header_description("ravenclaw")
     puts "\n"
-    puts Rainbow("❝#{header}❞").teal
+    puts Rainbow("❝#{house_header}❞").teal
 
-    # puts <<~DOC
-    #  Rainbow(#{ht[0]}).red.bright.underline \n #{hd[0]} \n
-    #  #{ht[1]} \n #{hd[1]} \n
-    #  #{ht[2]} \n #{hd[2]} \n
-    #  #{ht[3]} \n #{hd[3]} \n
-    # DOC
-    puts "\n"
-    puts Rainbow("✨#{ht[0]}:✨").steelblue.underline
-    puts Rainbow("#{hd[0]}")
-    puts "\n"
-    puts Rainbow("✨#{ht[1]}:✨").dodgerblue.underline
-    puts Rainbow("#{hd[1]}")
-    puts "\n"
-    puts Rainbow("✨#{ht[2]}:✨").steelblue.underline
-    puts Rainbow("#{hd[2]}")
-    puts "\n"
-    puts Rainbow("✨#{ht[3]}:✨").dodgerblue.underline
-    puts Rainbow("#{hd[3]}")
+    house_infor_section = house_ht.zip(house_hd).to_h
+
+    house_infor_section.each do  |k , v|
+      puts "\n"
+      puts Rainbow("✨#{k}:✨").steelblue.bright.underline
+      puts Rainbow("#{v}")
+    end
 
     exit
-
-    system "clear"
   end
 
   def founder_infor
-    puts "founder stuff"
+    founder_header = HPQuiz::Scraper.new.founder_header("rowena-ravenclaw")
+    founder_ht = HPQuiz::Scraper.new.founder_header_title("rowena-ravenclaw")
+    founder_hd = HPQuiz::Scraper.new.founder_header_description("rowena-ravenclaw")
+    puts "\n"
+    puts Rainbow("❝#{founder_header}❞").teal
+
+    founder_infor_section = founder_ht.zip(founder_hd).to_h
+
+    founder_infor_section.each do  |k , v|
+      puts "\n"
+      puts Rainbow("✨#{k}:✨").steelblue.bright.underline
+      puts Rainbow("#{v}")
+    end
+
     exit
   end
 
