@@ -1,8 +1,19 @@
 # HPQuiz
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/HP_Quiz`. To experiment with that code, run `bin/console` for an interactive prompt.
+✨✨Welcome!✨✨
+Have you ever played the Sorting Hat quiz?
+Yes?
+No?
+Regardless, you'll be able to experience that with
+a Harry Potter Sorting Hat terminal version!
+🦁 ✨ 🦅 ✨ 🐿 ✨ 🐍
+You'll not only be sorted to your house but have many options to learn about your house. Those sources will be presented on your terminal through
+the power of Nokogiri, Ruby, Pottermore, and moi.
 
-TODO: Delete this and the text above, and describe your gem
+To experiment with that code, run `./bin/run` for an interactive prompt. 
+
+Have fun!~
+
 
 ## Installation
 
@@ -22,7 +33,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To experiment with that code, run `./bin/run` for an interactive prompt.
 
 ## Development
 
@@ -31,8 +42,9 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/<github username>/HP_Quiz. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+At the moment I can't accept pull request because this is a final assignment project.
+But!
+Bug reports and pull requests will be eventually welcome on GitHub at https://github.com/<github username>/HP_Quiz. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
