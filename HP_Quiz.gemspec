@@ -35,11 +35,14 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "pry"
   spec.add_development_dependency "tty-prompt"
   spec.add_development_dependency "figlet"
   spec.add_development_dependency "lolcat"
   spec.add_development_dependency "tty-box"
   spec.add_development_dependency "rainbow"
+  spec.add_development_dependency "tty-screen"
+  spec.add_development_dependency "nokogiri"
 
 
 end
