@@ -1,16 +1,16 @@
-# HPQuiz
+# HPQuiz - The Sorting Terminal Quiz
 
 ✨✨Welcome!✨✨
-Have you ever played the Sorting Hat quiz?
-Yes?
-No?
-Regardless, you'll be able to experience that with
+\nHave you ever played the Sorting Hat quiz?
+\nYes?
+\nNo?
+\nRegardless, you'll be able to experience that with
 a Harry Potter Sorting Hat terminal version!
-🦁 ✨ 🦅 ✨ 🐿 ✨ 🐍
-You'll not only be sorted to your house but have many options to learn about your house. Those sources will be presented on your terminal through
+\n🦁 ✨ 🦅 ✨ 🐿 ✨ 🐍
+\nYou'll not only be sorted to your house but have many options to learn about your house. Those sources will be presented on your terminal through
 the power of Nokogiri, Ruby, Pottermore, and moi.
 
-To experiment with that code, run `./bin/run` for an interactive prompt. 
+To experiment with that code, run `./bin/run` for an interactive prompt.
 
 Have fun!~
 
@@ -43,7 +43,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 At the moment I can't accept pull request because this is a final assignment project.
-But!
+\nBut!
 Bug reports and pull requests will be eventually welcome on GitHub at https://github.com/<github username>/HP_Quiz. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
