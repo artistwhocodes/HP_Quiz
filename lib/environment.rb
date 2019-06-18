@@ -1,10 +1,18 @@
 require_relative "./HP_Quiz/version"
+require_relative "./houses"
+require_relative "./gryffindor"
+# require_relative "./HP_Quiz/slytherin"
 
-module HPQuiz
-  class Error < StandardError; end
-  # Your code goes here...
-end
-
-require_relative "./HP_Quiz"
 require_relative "./cli"
 require_relative "./scraper"
+
+require 'tty-prompt'
+require 'tty-box'
+require 'tty-screen'
+require 'figlet'
+require 'lolcat'
+require "pry"
+require 'rspec'
+require 'rainbow'
+require 'open-uri'
+require 'nokogiri'
