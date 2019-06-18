@@ -1,7 +1,7 @@
 require_relative "./HP_Quiz/version"
-require_relative "./houses"
-require_relative "./gryffindor"
-# require_relative "./HP_Quiz/slytherin"
+require_relative "./HP_Quiz/houses"
+require_relative "./HP_Quiz/gryffindor"
+require_relative "./HP_Quiz/slytherin"
 
 require_relative "./cli"
 require_relative "./scraper"
