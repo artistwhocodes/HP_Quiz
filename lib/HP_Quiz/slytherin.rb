@@ -3,7 +3,7 @@ class HPQuiz::Slytherin
   def slytherin_banner
     banner = HPQuiz::Scraper.new.banner("slytherin")
     box = TTY::Box.frame(width: TTY::Screen.width, height: TTY::Screen.height, border: :thick, align: :center, padding: 4,style: {
-    fg: :black, bg: :green, border: { fg: :dark, bg: :yellow } },
+    fg: :black, bg: :green, border: { fg: :dark, bg: :bright_white } },
     title: {top_center: 'You are in the house:', bottom_center: 'Congratulation! Let\'s learn more about your house' })  do
          " SLYTHERIN \n ❝#{banner}❞ "
     end
@@ -13,7 +13,7 @@ class HPQuiz::Slytherin
   def check_house_question
     prompt = TTY::Prompt.new
     magic = prompt.decorate('✨')
-    prompt.mask(Rainbow('Type the').green + Rainbow(' ✨Summoning Charm✨ ').yellow + Rainbow('to read more about your house.').green, mask: magic) do |q| # turn this into a varaible
+    prompt.mask(Rainbow('Type the').green.bold + Rainbow(' ✨Summoning Charm✨ ').yellow + Rainbow('to read more about your house.').green.bold, mask: magic) do |q| # turn this into a varaible
       q.validate(/\b((?i)accio(?-i))\b/)
       q.messages[:valid?] = 'Wrong spell! 🚫 -10 house points from SLYTHERIN!'
     end
@@ -22,7 +22,7 @@ class HPQuiz::Slytherin
   def house_menu
     prompt = TTY::Prompt.new(active_color: :green)
     system "clear"
-    prompt.select(Rainbow("🐍Welcome to Slytherin!🐍\nHere's your house information:").green, help: "", cycle: true) do |menu|
+    prompt.select(Rainbow("🐍Welcome to Slytherin!🐍\nHere's your house information:").green.bold, help: "", cycle: true) do |menu|
       menu.choice "Common Room", -> {house_infor}
       menu.choice "House Founder",  -> {founder_infor}
       menu.choice "Your Sorting Quiz Stats", -> {stats}

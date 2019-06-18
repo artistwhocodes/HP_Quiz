@@ -3,7 +3,7 @@ class HPQuiz::Gryffindor
   def gryffindor_banner
     banner = HPQuiz::Scraper.new.banner("gryffindor")
     box = TTY::Box.frame(width: TTY::Screen.width, height: TTY::Screen.height, border: :thick, align: :center, padding: 4,style: {
-    fg: :black, bg: :red, border: { fg: :dark, bg: :yellow } },
+    fg: :black, bg: :bright_red, border: { fg: :dark, bg: :bright_white } },
     title: {top_center: 'You are in the house:', bottom_center: 'Congratulation! Let\'s learn more about your house' })  do
          " GRYFFINDOR \n ❝#{banner}❞ "
     end
@@ -11,9 +11,9 @@ class HPQuiz::Gryffindor
   end
 
   def check_house_question
-    prompt = TTY::Prompt.new 
+    prompt = TTY::Prompt.new
     magic = prompt.decorate('✨')
-    prompt.mask(Rainbow('Type the').red + Rainbow(' ✨Summoning Charm✨ ').yellow + Rainbow('to read more about your house.').red, mask: magic) do |q| # turn this into a varaible
+    prompt.mask(Rainbow('Type the').red.bold + Rainbow(' ✨Summoning Charm✨ ').yellow + Rainbow('to read more about your house.').red.bold, mask: magic) do |q| # turn this into a varaible
       q.validate(/\b((?i)accio(?-i))\b/)
       q.messages[:valid?] = 'Wrong spell! 🚫 -10 house points from GRYFFINDOR!'
     end
@@ -22,7 +22,7 @@ class HPQuiz::Gryffindor
   def house_menu
     prompt = TTY::Prompt.new(active_color: :red)
     system "clear"
-    prompt.select(Rainbow("🦁Welcome to Gryffindor!🦁\nHere's your house information:").red, help: "", cycle: true) do |menu|
+    prompt.select(Rainbow("🦁Welcome to Gryffindor!🦁\nHere's your house information:").darkred.bold, help: "", cycle: true) do |menu|
       menu.choice "Common Room", -> {house_infor}
       menu.choice "House Founder",  -> {founder_infor}
       menu.choice "Your Sorting Quiz Stats", -> {stats}
@@ -35,7 +35,7 @@ class HPQuiz::Gryffindor
     ht = HPQuiz::Scraper.new.header_title("gryffindor")
     hd = HPQuiz::Scraper.new.header_description("gryffindor")
     puts "\n"
-    puts Rainbow("❝#{header}❞").red.bright
+    puts Rainbow("❝#{header}❞") 
 
     # puts <<~DOC
     #  Rainbow(#{ht[0]}).red.bright.underline \n #{hd[0]} \n
