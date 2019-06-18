@@ -1,3 +1,6 @@
+These are my notes I did for the process of this project.
+
+
 The bin directory holds our executable file. This file is responsible for running the program. It contains code that actually enacts the command line interaction––i.e. greeting the user, asking the user for input, storing that input and then acting on it.
 
 Environment is responsible for things like file requirements (i.e. making sure your different files have access to one another), establishing connections to your database (if you have one) and ensuring that your test suite has access to the files that contain the code it is testing.
@@ -10,6 +13,8 @@ Questions: each question answer has points to each houses. either 100(applied) o
 Scrape: Will Scrape house infor from pottermore. https://www.pottermore.com/collection/all-about-ravenclaw
 
 maybe scrape: https://www.pottermore.com/features/everything-a-first-year-should-know-about-hogwarts
+
+ maybe scrape: https://www.pottermore.com/features/stories-of-the-hogwarts-founders
 
 Dawn  Gryffindor = [100].sum  Ravenclaw = [100, 100] Slytherin = [] Hufflepuff = []
 
@@ -45,35 +50,21 @@ GRYFFINDOR
 dawn
 forest
 stars
-Cowardly
-Ask for more stories about your adventures
-The Bold
-Glory?
-A crackling log fire
+
 
 RAVENCLAW
 dawn
 forest
 moon
-Ignorant
-Think with admiration of your achievements
-The Wise
-Wisdom?
+
 
 HUFFLEPUFF
 Dusk
 river
 stars
-Selfish
-Miss you, but smile
-The Good
-Love?
+
 
 SLYTHERIN
 dusk
 river
 Moon
-Ordinary
-I don't care what people think of me after I'm dead, it's what they think of me while I'm alive that counts
-The Great
-Power?
