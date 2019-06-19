@@ -62,7 +62,23 @@ class HPQuiz::Gryffindor
       puts Rainbow("✨#{k}:✨").red.bright.underline
       puts Rainbow("#{v}")
     end
+    founder_menu
+  end
 
+  def founder_menu
+    prompt = TTY::Prompt.new(active_color: :red)
+    prompt.select("", help: "", cycle: true) do |menu|
+      menu.choice "read more", -> {founder_story}
+        menu.choice 'Go back to menu', -> {house_menu}
+    end
+  end
+
+  def founder_story
+    system "clear"
+    founder_names = HPQuiz::Scraper.new.founder_names
+    puts Rainbow("#{founder_names[0].text}").red.bright.underline
+
+    HPQuiz::Scraper.new.gryffindor_bio
     exit
   end
 
