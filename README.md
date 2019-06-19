@@ -41,9 +41,12 @@ Or install it yourself as:
 
 To experiment with that code, run `bin/run` for an interactive prompt.
 
-##cheatsheet
+## Cheatsheet
 
-There are 21 questions. To view all the house quickly in lib/cli.rb you can comment out line 92 - 145   
+There are 21 questions.
+You can do 3 questions if you want to view all the houses option quickly.
+
+Go to lib/cli.rb. There you can comment out line 92 - 145   
 
 Gryffindor | Ravenclaw | Hufflepuff | Slytherin
 ------------ | ------------- | ------------ | -------------
