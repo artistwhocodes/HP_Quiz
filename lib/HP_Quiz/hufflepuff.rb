@@ -62,7 +62,23 @@ class HPQuiz::Hufflepuff
       puts Rainbow("✨#{k}:✨").yellow.bright.underline
       puts Rainbow("#{v}")
     end
+    founder_menu
+  end
 
+  def founder_menu
+    prompt = TTY::Prompt.new(active_color: :yellow)
+    prompt.select("", help: "", cycle: true) do |menu|
+      menu.choice "read more", -> {founder_story}
+        menu.choice 'Go back to menu', -> {house_menu}
+    end
+  end
+
+  def founder_story
+    system "clear"
+    founder_names = HPQuiz::Scraper.new.founder_names
+    puts Rainbow("#{founder_names[1].text}").yellow.bright.underline
+
+    HPQuiz::Scraper.new.hufflepuff_bio
     exit
   end
 
