@@ -1,13 +1,19 @@
 # HPQuiz - The Sorting Terminal Quiz
 
 ✨✨Welcome!✨✨
-\nHave you ever played the Sorting Hat quiz?
-\nYes?
-\nNo?
-\nRegardless, you'll be able to experience that with
+Have you ever played the Sorting Hat quiz?
+
+Yes?
+
+No?
+
+
+Regardless, you'll be able to experience that with
 a Harry Potter Sorting Hat terminal version!
-\n🦁 ✨ 🦅 ✨ 🐿 ✨ 🐍
-\nYou'll not only be sorted to your house but have many options to learn about your house. Those sources will be presented on your terminal through
+
+🦁 ✨ 🦅 ✨ 🐿 ✨ 🐍
+
+You'll not only be sorted to your house but have many options to learn about your house. Those sources will be presented on your terminal through
 the power of Nokogiri, Ruby, Pottermore, and moi.
 
 To experiment with that code, run `./bin/run` for an interactive prompt.
@@ -33,7 +39,17 @@ Or install it yourself as:
 
 ## Usage
 
-To experiment with that code, run `./bin/run` for an interactive prompt.
+To experiment with that code, run `bin/run` for an interactive prompt.
+
+##cheatsheet
+
+There are 21 questions. To view all the house quickly in lib/cli.rb you can comment out line 92 - 145   
+
+Gryffindor | Ravenclaw | Hufflepuff | Slytherin
+------------ | ------------- | ------------ | -------------
+dawn  | dawn | dusk | dusk
+forest | forest | river | river
+stars | moon | stars | moon
 
 ## Development
 
