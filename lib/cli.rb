@@ -9,7 +9,7 @@ class HPQuiz::CLI
   end
 
   def call #instance method
-     # system "afplay  ./lib/HPSong.mp3 &"
+     system "afplay  ./lib/HPSong.mp3 &"
      system "clear"
      self.banner
      system "clear"
@@ -103,22 +103,22 @@ class HPQuiz::CLI
     @@sum << input7 = prompt.select("7. Given the choice, would you rather invent a potion that would guarantee you:", choices7)
     puts "\n"
     choices8 = {"A crackling log fire" => ["gryffindor"] , "The sea" => ["slytherin"] , "Fresh parchment" => ["ravenclaw"] , "Home" => ["hufflepuff"] }
-    @@sum << input8 = prompt.select("8. Once every century, the Flutterby bush produces flowers that adapt their scent to attract the unwary.  If it lured you, it would smell of:", choices8)
+    @@sum << input8 = prompt.select("8. Once every century, the Flutterby bush produces flowers 🌻 that adapt their scent to attract the unwary.  If it lured you, it would smell of:", choices8)
     puts "\n"
     choices9 = {"The foaming, frothing, silvery liquid that sparkles as though containing ground diamonds." => ["ravenclaw"] , "The smooth, thick, richly purple drink that gives off a delicious smell of chocolate and plums." => ["hufflepuff"] , "The golden liquid so bright that it hurts the eye, and which makes sunspots dance all around the room." => ["gryffindor"] , "The mysterious black liquid that gleams like ink, and gives off fumes that make you see strange visions." => ["slytherin"] }
     @@sum << input9 = prompt.select("9. Four goblets are placed before you.  Which would you choose to drink", choices9)
     puts "\n"
-    choices10 = {"Ruby" => ["gryffindor"] , "CSS3/" => ["slytherin"] , "PHP/C" => ["ravenclaw"] , "JavaScript" => ["hufflepuff"] }
+    choices10 = {"✨Ruby✨" => ["gryffindor"] , "CSS3/" => ["slytherin"] , "PHP/C" => ["ravenclaw"] , "JavaScript" => ["hufflepuff"] }
     @@sum << input10 = prompt.select("10. Which do you like?", choices10)
     puts "\n"
     choices11 = {"The silver leafed tree bearing golden apples" => ["ravenclaw"] , "The fat red toadstools that appear to be talking to each other" => ["hufflepuff"] , "The bubbling pool, in the depths of which something luminous is swirling" => ["slytherin"] , "The statue of an old wizard with a strangely twinkling eye" => ["gryffindor"] }
-    @@sum << input11 = prompt.select("11. You enter an enchanted garden.  What would you be most curious to examine first?", choices11)
+    @@sum << input11 = prompt.select("11. You enter an enchanted garden. 🌸 What would you be most curious to examine first?", choices11)
     puts "\n"
     choices12 = {"The small tortoiseshell box, embellished with gold, inside which some small creature seems to be squeaking." => ["hufflepuff"] , "The gleaming jet black box with a silver lock and key, marked with a mysterious rune that you know to be the mark of Merlin." => ["slytherin"] , "The ornate golden casket, standing on clawed feet, whose inscription warns that both secret knowledge and unbearable temptation lie within.	" => ["ravenclaw"] , "The small pewter box, unassuming and plain, with a scratched message upon it that reads ‘I open only for the worthy.'" => ["gryffindor"] }
     @@sum << input12 = prompt.select("12. Four boxes are placed before you. Which would you try and open?", choices12)
     puts "\n"
     choices13 = {"Apparition and Disapparition (being able to materialize and dematerialize at will)	" => ["slytherin"] , "Transfiguration (turning one object into another object)" => ["ravenclaw"] , "Flying on a broomstick	" => ["gryffindor"] , "Hexes and jinxes" => ["slytherin"] , "All about magical creatures, and how to befriend/care for them" => ["hufflepuff"] , "Magical Software Engineering" => ["ravenclaw" , "gryffindor"] , "Every area of magic I can	" => ["ravenclaw"] }
-    @@sum << input13 = prompt.select("13. What are you most looking forward to learning at Hogwarts?", choices13)
+    @@sum << input13 = prompt.select("13. What are you most looking forward to learning at Hogwarts 🏰?", choices13)
     puts "\n"
     choices14 = {"Hunger" => [ "ravenclaw" , "hufflepuff"] , "Cold" => ["hufflepuff" , "slytherin"] , "Loneliness" => ["gryffindor" , "hufflepuff"] , "Boredom" => ["gryffindor" , "slytherin"] , "Being ignored" => ["ravenclaw" , "slytherin"] }
     @@sum << input14 = prompt.select("14. Which of the following do you find most difficult to deal with?", choices14)
@@ -126,22 +126,22 @@ class HPQuiz::CLI
     choices15 = {"Envied?" => [ "ravenclaw" , "slytherin"] , "Imitated?" => ["ravenclaw"] , "Trusted?" => ["gryffindor" , "hufflepuff"] , "Praised?" => ["gryffindor" , "slytherin"] , "Liked?" => ["hufflepuff"] , "Feared? " => ["slytherin"] }
     @@sum << input15 = prompt.select("15. Which would you rather be:", choices15)
     puts "\n"
-    choices16 = {"The power to read minds" => [ "ravenclaw" , "slytherin"] , "The power of invisibility" => ["gryffindor" , "hufflepuff"] , "Trusted?" => ["gryffindor" , "hufflepuff"] , "Praised?" => ["gryffindor" , "slytherin"] , "Liked?" => ["hufflepuff"] , "Feared? " => ["slytherin"] }
+    choices16 = {"The power to read minds" => [ "ravenclaw" , "slytherin"] , "The power of invisibility" => ["gryffindor" , "hufflepuff"] , "The power of superhuman strength" => ["slytherin" , "hufflepuff"] , "The power to speak to animals" => ["ravenclaw" , "hufflepuff"] , "The power to change the past" => ["gryffindor" , "slytherin"] , "The power to change your appearance at will" => ["gryffindor" , "ravenclaw"] }
     @@sum << input16 = prompt.select("16. If you could have any power, which would you choose?", choices16)
     puts "\n"
     choices17 = {"Ask what makes them think so?" => [ "ravenclaw"] , "Agree, and ask whether they'd like a free sample of a jinx?" => ["slytherin"] , "Agree, and walk away, leaving them to wonder whether you are bluffing?" => ["gryffindor"] , "Tell them that you are worried about their mental health, and offer to call a doctor." => ["hufflepuff"]  }
-    @@sum << input17 = prompt.select("17. If you could have any power, which would you choose?", choices17)
+    @@sum << input17 = prompt.select("17. A Muggle confronts you and says that they are sure you are a witch 🧙🏾‍♀️ or wizard 🧙‍♂️. Do you:?", choices17)
     puts "\n"
     choices18 = {"Standing on top of something very high and realizing suddenly that there are no hand- or footholds, nor any barrier to stop you falling." => [ "ravenclaw" ] , "An eye at the keyhole of the dark, windowless room in which you are locked." => ["gryffindor"] , "Waking up to find that neither your friends nor your family have any idea who you are." => ["hufflepuff"] , "Being forced to speak in such a silly voice that hardly anyone can   understand you, and everyone laughs at you." => ["slytherin"] }
-    @@sum << input18 = prompt.select("18. Which nightmare would frighten you most?", choices18)
+    @@sum << input18 = prompt.select("18. Which nightmare 🙀 would frighten you most?", choices18)
     puts "\n"
-    choices19 = {"Black" => [ "gryffindor" , "slytherin" ] , "White " => ["hufflepuff" , "ravenclaw"] }
+    choices19 = {"Black🏴" => [ "gryffindor" , "slytherin" ] , "White🏳 " => ["hufflepuff" , "ravenclaw"] }
     @@sum << input19 = prompt.select("19. Black or white?", choices19)
     puts "\n"
-    choices20 = {"Black" => [ "gryffindor" , "slytherin" ] , "White " => ["hufflepuff" , "ravenclaw"] }
+    choices20 = {"Heads🗣" => [ "ravenclaw" , "hufflepuff" ] , "Tail🍑" => ["gryffindor" , "slytherin"] }
     @@sum << input20 = prompt.select("20. Black or white?", choices20)
     puts "\n"
-    choices21 = {"Left" => [ "ravenclaw" , "slytherin" ] , "Right" => ["gryffindor" , "hufflepuff"] }
+    choices21 = {"Left👈 " => [ "ravenclaw" , "slytherin" ] , "Right👉" => ["gryffindor" , "hufflepuff"] }
     @@sum << input21 = prompt.select("21. Left or right?", choices21)
     puts "\n"
     #binding.pry
