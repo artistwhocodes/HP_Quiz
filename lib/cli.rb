@@ -93,7 +93,7 @@ class HPQuiz::CLI
     choices4 = {"Ordinary" => ["slytherin"], "Ignorant" => ["ravenclaw"] , "Cowardly" => ["gryffindor"] , "Selfish" => ["hufflepuff"]}
     @@sum << input4 = prompt.select("4. Which of the following would you most hate people to call you?", choices4)
     puts "\n"
-    choices5 = {"Miss you, but smile" => ["hufflepuff"], "Ask for more stories about your adventures" => ["gryffindor"] , "Think with admiration of your achievements" => ["ravenclaw"], "Think with admiration of your achievements" => ["slytherin"]}
+    choices5 = {"Miss you, but smile" => ["hufflepuff"], "Ask for more stories about your adventures" => ["gryffindor"] , "Think with admiration of your achievements" => ["ravenclaw"], "I don't care what people think of me after I'm dead, it's what they think of me while I'm alive that counts" => ["slytherin"]}
     @@sum << input5 = prompt.select("5. After you have died, what would you most like people to do when they hear your name?", choices5)
     puts "\n"
     choices6 = {"The Wise" => ["ravenclaw"] , "The Good" => ["hufflepuff"] , "The Great" => ["slytherin"] , "The Bold" => ["gryffindor"] }
