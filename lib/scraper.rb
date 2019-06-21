@@ -1,6 +1,4 @@
 class HPQuiz::Scraper
-
-  attr_accessor :gryffindor, :hufflepuff , :slytherin , :raveclaw
   #1st site
   def get_first_page(text)
     doc = Nokogiri::HTML(open("https://www.pottermore.com/#{text}"))
@@ -74,24 +72,32 @@ class HPQuiz::Scraper
   def hufflepuff_bio
     founder_bio.map do |text|
       para = text.css("h2 ~ p")
-      @hufflepuff = para[6] , para[7] , para[8] , para[9]
-      @hufflepuff.each {|v| puts "\n#{v.text}" }
+      hufflepuff = para[6] , para[7] , para[8] , para[9]
+      hufflepuff.each {|v| puts "\n#{v.text}" }
     end
   end
 
   def slytherin_bio
     founder_bio.map do |text|
       para = text.css("h2 ~ p")
-      @slytherin = para[11] , para[12] , para[13] , para[14]
-      @slytherin.each {|v| puts "\n#{v.text}" }
+      slytherin = para[11] , para[12] , para[13] , para[14]
+      slytherin.each {|v| puts "\n#{v.text}" }
     end
   end
 
   def ravenclaw_bio
     founder_bio.map do |text|
       para = text.css("h2 ~ p")
-      @ravenclaw = para[16] , para[17] , para[18]
-      @ravenclaw.each {|v| puts "\n#{v.text}" }
+      ravenclaw = para[16] , para[17] , para[18]
+      ravenclaw.each {|v| puts "\n#{v.text}" }
     end
   end
+  #extra EXTRA feature
+  def characters_page
+		 Nokogiri::HTML(open("https://en.wikipedia.org/wiki/List_of_Harry_Potter_characters"))
+	end
+  def hp_names
+    characters_page.search("ul li a").map(&:text)
+  end
+
 end
