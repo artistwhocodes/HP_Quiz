@@ -1,19 +1,19 @@
 # CLI Controller = user interaction
 class HPQuiz::CLI
-  attr_accessor :name
+  attr_accessor :name , :species
 
-  @@sum = []
+  @@sum = [] #is a class. an array to hold input from question method.
 
   def self.sum
     @@sum
   end
 
   def call #instance method
-     system "afplay  ./lib/HPSong.mp3 &"
+     # system "afplay  ./lib/HPSong.mp3 &"
      system "clear"
      self.banner
      system "clear"
-     self.greeting # self is an instance of CLI
+     self.greeting # self is an instance of CLI | explicit
      self.letter_of_acceptance
      system "clear"
      self.questions
@@ -31,15 +31,11 @@ class HPQuiz::CLI
     puts "\n\n\n\n\n"
     prompt = TTY::Prompt.new
     input1 = %w(Witch Wizard)
-    species = prompt.select("Are you a Witch🧙🏾‍♀️ or Wizard🧙‍♂️?", input1, echo: false)
+    @species = prompt.select("Are you a Witch🧙🏾‍♀️ or Wizard🧙‍♂️?", input1, echo: false)
     puts "\n\n\n\n\n"
     system "clear"
     puts "\n\n\n\n\n"
-    @name = prompt.ask("#{species} , what is your first name?") do |q|
-      q.required true
-      q.validate /\A\w+\Z/
-      q.modify   :capitalize
-    end
+    ask_name_and_check_for_hp_names
     system "clear"
     puts "\n\n\n\n\n"
     puts "Hello, #{@name}! I have a letter you been waiting for."
@@ -51,6 +47,26 @@ class HPQuiz::CLI
     end
     puts "\n\n\n\n\n"
     puts "\n\n\n\n\n"
+  end
+
+  def ask_name_and_check_for_hp_names
+    puts "#{@species} , what is your full name?" + Rainbow(" i dare you to try to enter a Harry Potter character name").green.italic
+    @name = gets.chomp
+    if HPQuiz::Scraper.new.hp_names.include?(@name.split(" ").map{|word| word.capitalize}.join(" "))
+      system "clear"
+      puts "\n\n\n\n\n"
+      puts Rainbow("Do you want to be expelled before being sorted? Do not use a prior Hogwarts student name!").red.bright.bold
+      puts "\n\n\n\n\n"
+      ask_name_and_check_for_hp_names
+    elsif @name =~ (/[\w]+([\s]+[\w]+){1}+/)
+      puts "you may proceed"
+    else
+      system "clear"
+      puts "\n\n\n\n\n"
+      puts Rainbow("Please type your full name").green.bright.bold
+      puts "\n\n\n\n\n"
+      ask_name_and_check_for_hp_names
+    end
   end
 
   def letter_of_acceptance
@@ -88,7 +104,7 @@ class HPQuiz::CLI
     puts "\n"
     choices3 = {"Moon" => ["ravenclaw" , "slytherin"], "Stars" => ["gryffindor" , "hufflepuff"]}
     @@sum << input3 = prompt.select("3. Moon🌙 or stars⭐️?", choices3, help: "" , cycle: true)
-    #comment the rest of the questions below to use the cheatsheet to view all houses quickly.
+    comment the rest of the questions below to use the cheatsheet to view all houses quickly.
     puts "\n"
     choices4 = {"Ordinary" => ["slytherin"], "Ignorant" => ["ravenclaw"] , "Cowardly" => ["gryffindor"] , "Selfish" => ["hufflepuff"]}
     @@sum << input4 = prompt.select("4. Which of the following would you most hate people to call you?", choices4, help: "" , cycle: true)
