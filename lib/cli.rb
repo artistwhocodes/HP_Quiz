@@ -104,7 +104,7 @@ class HPQuiz::CLI
     puts "\n"
     choices3 = {"Moon" => ["ravenclaw" , "slytherin"], "Stars" => ["gryffindor" , "hufflepuff"]}
     @@sum << input3 = prompt.select("3. Moon🌙 or stars⭐️?", choices3, help: "" , cycle: true)
-    comment the rest of the questions below to use the cheatsheet to view all houses quickly.
+    #comment the rest of the questions below to use the cheatsheet to view all houses quickly.
     puts "\n"
     choices4 = {"Ordinary" => ["slytherin"], "Ignorant" => ["ravenclaw"] , "Cowardly" => ["gryffindor"] , "Selfish" => ["hufflepuff"]}
     @@sum << input4 = prompt.select("4. Which of the following would you most hate people to call you?", choices4, help: "" , cycle: true)
