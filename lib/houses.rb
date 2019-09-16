@@ -1,34 +1,54 @@
+require 'pry'
 class HPQuiz::Houses
-  def count_duplicates
-  hash = {} # hash
-  for value in HPQuiz::CLI.sum.flatten!
-    hash[value] ||= 0
-    hash[value] += 1
-  end
-   hash
+  @@all = []
+
+  def self.all
+    return @@all
   end
 
-  def sorted_house
-  answer =  count_duplicates.max_by{| k, v|  v  }
-  answer.tap{ |k,v|
-   if k == "gryffindor"
-     HPQuiz::Gryffindor.new.gryffindor_banner
-     HPQuiz::Gryffindor.new.check_house_question
-     HPQuiz::Gryffindor.new.house_menu
-   elsif k == "ravenclaw"
-     HPQuiz::Ravenclaw.new.ravenclaw_banner
-     HPQuiz::Ravenclaw.new.check_house_question
-     HPQuiz::Ravenclaw.new.house_menu
-   elsif k == "hufflepuff"
-     HPQuiz::Hufflepuff.new.hufflepuff_banner
-     HPQuiz::Hufflepuff.new.check_house_question
-     HPQuiz::Hufflepuff.new.house_menu
-   else
-    HPQuiz::Slytherin.new.slytherin_banner
-    HPQuiz::Slytherin.new.check_house_question
-    HPQuiz::Slytherin.new.house_menu
-   end
-    }
+  def self.find_by_name(name)
+      @@all.find{ |house| house.house_name.downcase == name.downcase }
   end
- #binding.pry
+
+  attr_accessor :house_name, :banner_quote, :founder, :founder_url, :founder_banner, :founder_infor_section,
+   :commonroom_url, :commonroom_banner, :commonroom_infor_section, :founders_bio_url, :founder_bio, :emoji, :colors, :test, :promptcolor
+
+  def initialize(house_name)
+      @house_name  = house_name
+      @@all << self
+        @banner_quote, @founder, @founder_url, @founder_banner, @founder_infor_section, @commonroom_url, @commonroom_banner, @commonroom_infor_section, @founders_bio_url, @founder_bio =  nil, nil, nil, nil, nil, nil, nil, nil, nil
+      case house_name
+      when "Gryffindor"
+          @emoji = "🦁 "
+          @promptcolor = ".red"
+          @promptselect = "darkred"
+          @colors = "red"
+          @bannercolor_bg = "bright_red"
+          @bannercolor_border = "bright_white"
+      when "Ravenclaw"
+          @emoji = "🦅 "
+          @promptcolor = ".cyan"
+          @promptselect = "stealblue"
+          @colors = "stealblue"
+          @bannercolor_bg = "cyan"
+          @bannercolor_border = "bright_white"
+      when "Hufflepuff"
+          @emoji = "🐿 "
+          @promptcolor = ".yellow"
+          @promptselect = "yellow"
+          @colors = "yellow"
+          @bannercolor_bg = "yellow"
+          @bannercolor_border = "black"
+      when "Slytherin"
+          @emoji = "🐍 "
+          @promptcolor = ".green"
+          @promptselect = "green"
+          @colors = "green"
+          @bannercolor_bg = "green"
+          @bannercolor_border = "bright_white"
+      end
+
+  end
+
+
 end
